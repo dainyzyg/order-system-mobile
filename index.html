@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1,user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="stylesheet" type="text/css" href="static/iconfont.css">
+  <link rel="stylesheet" href="static/photoswipe/photoswipe.css">
+  <link rel="stylesheet" href="static/photoswipe/default-skin/default-skin.css">
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      font-family: "PingFang SC", "Microsoft YaHei" !important;
+      overflow: hidden;
+    }
+
+    .mint-field-core {
+      padding-left: 0;
+    }
+
+    .mint-field-core::-webkit-input-placeholder {
+      color: #666;
+    }
+
+  </style>
+  <title>wesco</title>
+</head>
+
+<body>
+  <div id="app"></div>
+  <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+			 It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+      <!-- Container that holds slides. 
+				PhotoSwipe keeps only 3 of them in the DOM to save memory.
+				Don't modify these 3 pswp__item elements, data is added later on. -->
+      <div class="pswp__container">
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+      </div>
+
+      <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+      <div class="pswp__ui pswp__ui--hidden">
+
+        <div class="pswp__top-bar">
+
+          <!--  Controls are self-explanatory. Order can be changed. -->
+
+          <div class="pswp__counter"></div>
+
+          <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+          <!-- <i class="iconfont icon-trash_fill pswp__button"></i> -->
+
+          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+          <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+          <div id="psremovediv" style="opacity:.75;width:44px;height:44px;display:flex;justify-content: center;align-items: center;float:right">
+            <i id="psremoveicon" style="color:white;font-size:22px;" class="iconfont icon-trash_fill"></i>
+          </div>
+          <div id="pssavediv" style="display:none;opacity:.75;width:44px;height:44px;justify-content: center;align-items: center;float:right">
+            <i id="pssaveicon" style="color:white;font-size:22px;" class="iconfont icon-document_fill"></i>
+          </div>
+          <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+          <!-- element will get class pswp__preloader--active when preloader is running -->
+          <div class="pswp__preloader">
+            <div class="pswp__preloader__icn">
+              <div class="pswp__preloader__cut">
+                <div class="pswp__preloader__donut"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+          <div class="pswp__share-tooltip"></div>
+        </div>
+
+        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+        </button>
+
+        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+        </button>
+
+        <div class="pswp__caption">
+          <div class="pswp__caption__center"></div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+  <script src="static/server.js"></script>
+  <!-- built files will be auto injected -->
+</body>
+
+</html>
+<script src="static/photoswipe/photoswipe.js"></script>
+<script src="static/photoswipe/photoswipe-ui-default.js"></script>
+<script src="static/exif.js"></script>
+<script>
+  if (window.toString() === '[object global]') {
+    const pssavediv = document.getElementById('pssavediv')
+    pssavediv.style.display = 'flex'
+  }
+
+</script>
